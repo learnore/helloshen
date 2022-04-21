@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
 """
-@author learnore@163.com
-@time   2022-04-17 10:52
-
-spades      ♠
-hearts      ❤
-diamonds    ♦
-clubs       ♣
+-------------------------------------------------
+  IDE         : PyCharm
+  File Name   : test
+  Description : 向量类
+  Author      : chenyushencc@gmail.com
+  date        : 2022/04/17 10:52
+-------------------------------------------------
 """
 import collections
 from random import choice
