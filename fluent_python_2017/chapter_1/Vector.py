@@ -19,13 +19,26 @@ class Vector:
         self.y = y
 
     """
-    * __repr__() 字符串表示形式，自定义输出实例化对象时的信息。
+    * Python 对象的一个基本要求就是它得有合理的字符串表示形式， 
+    * __repr__ 和 __str__ 来满足这个要求，
+    * 前者方便我们调试和记录日志，后者则是给终端用户看的
+    """
+
+    """
+    * __repr__() 字符串表示形式之一，自定义输出实例化对象时的信息
     * <类名 + object + 内存地址>
     * <Vector object at 0x10e100070
     """
     def __repr__(self):
         # return 'Vector(%r, %r)' % (self.x, self.y)    # %r 用来替代所代表的对象
         return 'Vector({}, {})'.format(self.x, self.y)  # str.format()
+
+    """
+    * __str__() 字符串表示形式之二，注意 return 的类型：
+    * TypeError: __str__ returned non-string (type float)
+    """
+    def __str__(self):
+        return 'Vector(%r, %r)' % (self.x, self.y)
 
     def __abs__(self):
         return hypot(self.x, self.y)        # hypot() 返回欧几里德范数 sqrt(x*x + y*y)。PS：已知两边 求 第三边 的长度
@@ -52,5 +65,6 @@ if __name__ == '__main__':
 
     print(v)
     print(abs(v))
-    print(v * 3)
     print(abs(v * 3))
+    print(v * 3)
+    print(str(v * 3))
