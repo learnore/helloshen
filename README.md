@@ -2,11 +2,13 @@
 * Contributions will show up on my profile.
 * And Hello, My name is China Shen.
 
-### 实用的一些 🔗 
-[Python 之禅](https://www.python.org/doc/humor/#the-zen-of-python)
+
+### [Python 之禅](https://www.python.org/doc/humor/#the-zen-of-python)
 * “实用胜于纯粹。”
 * “不能让特例特殊到开始破坏既定规则。”
 
+
+### 实用的一些 🔗
 [Python 语言参考手册里的“Data Model”一章](https://docs.python.org/3/reference/datamodel.html)
 * 是最符合规范的知识来源
 
