@@ -36,3 +36,62 @@ if __name__ == '__main__':
     ITEM_TOTAL = slice(55, None)
     for item in invoice.split('\n')[2:]:
         print(item[SKU], item[DESCRIPTION], item[UNIT_PRICE], item[QUANTITY], item[ITEM_TOTAL])
+
+    print("------------------------------------------------------------------------")
+    l = list(range(10))
+    print(l)
+    l[2:5] = [20, 30]
+    print(l)
+    del l[5:7]
+    print(l)
+    l[3::2] = [11, 22]
+    print(l)
+    """
+    * tips: 如果赋值的对象是一个切片，那么赋值语句的右侧必须是个可迭代对象。即便只有单独一个值，也要把它转换成可迭代的序列
+    """
+    l[2:5] = [100]  # l[2:5] = 100  TypeError: can only assign an iterable
+    print(l)
+
+    print("------------------------------------------------------------------------")
+    m = [1, 2, 3]
+    print(m * 5)
+    print('abcd ' * 3)
+
+    """
+    * tips：初始化不可以使用 [[] * 3 for i in range(3)]
+    *       因为三个引用都指向的都是同一个列表，不是我们所想要的结果
+    """
+    board = [['_'] * 3 for i in range(3)]
+    print(board)
+    board[1][2] = 'O'
+    print(board)
+
+    """
+    * X 示范 X
+    """
+    weird_board = [['_'] * 3] * 3
+    print(weird_board)          # 看起来没问题，但是接下来赋值就会出错
+    weird_board[1][2] = 'X'
+    print(weird_board)          # [['_', '_', 'X'], ['_', '_', 'X'], ['_', '_', 'X']]
+
+    """
+    * X 示范 X == 以下 for 循环的代码
+    * 追加同一个行对象（row）3 次到游戏板（board）
+    """
+    row = ['_'] * 3
+    board = []
+    for i in range(3):
+        board.append(row)
+    board[1][2] = 'X'
+    print(board)
+
+    """
+    * √ 示范 √
+    * 每次迭代中都新建了一个列表，作为新的一行（row）追加到游戏板（board）
+    """
+    board = []
+    for i in range(3):
+        row = ['_'] * 3
+        board.append(row)
+    board[1][2] = 'O'
+    print(board)
