@@ -37,19 +37,19 @@ class FrenchDeck:
 
 
 if __name__ == '__main__':
-    # beer_card = Card('7', '❤')
-    # print(beer_card)
+    beer_card = Card('7', '❤')
+    print(beer_card)
 
     deck = FrenchDeck()
-    # print(len(deck))
+    print(len(deck))
 
-    # print(deck[0], deck[-1])
+    print(deck[0], deck[-1])
 
-    # print(choice(deck))     # 随机抽牌
-    # print(choice(deck))     # 随机抽牌
+    print(choice(deck))     # 随机抽牌
+    print(choice(deck))     # 随机抽牌
 
-    # for card in reversed(deck):
-    #     print(card)
+    for card in reversed(deck):
+        print(card)
 
     """
     给扑克的每个花色赋予值：
@@ -66,3 +66,5 @@ if __name__ == '__main__':
 
     for card in sorted(deck, key=spades_high):  # 输出排好序的扑克
         print(card)
+
+
