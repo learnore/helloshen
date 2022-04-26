@@ -7,6 +7,11 @@
 * “实用胜于纯粹。”
 * “不能让特例特殊到开始破坏既定规则。”
 
+### [Python Tutor](https://pythontutor.com/)
+* 是一个对 Python 运行原理进行可视化分析的工具
+![Python Tutor](https://github.com/learnore/helloshen/blob/main/fluent_python_2017/image/python_tutor.png "Python Tutor")
+
+
 
 ### 实用的一些 🔗
 [Python 语言参考手册里的“Data Model”一章](https://docs.python.org/3/reference/datamodel.html)
