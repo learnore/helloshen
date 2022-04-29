@@ -11,6 +11,9 @@
 * 是一个对 Python 运行原理进行可视化分析的工具
 ![Python Tutor](https://github.com/learnore/helloshen/blob/main/fluent_python_2017/image/python_tutor.png "Python Tutor")
 
+### [排序集合模块](https://code.activestate.com/recipes/577197-sortedcollection/)
+* Python 的高产贡献者 Raymond Hettinger 写了一个排序集合模块
+* 模块里集成了 bisect 功能，但是比独立的 bisect 更易用
 
 
 ### 实用的一些 🔗
