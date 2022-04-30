@@ -3,9 +3,16 @@
 * And Hello, My name is China Shen.
 
 
+### 常用库 · 数据类
+* [Netlib](http://www.netlib.org)
+* [Pandas](http://pandas.pydata.org)
+* [Blaze](http://blaze.pydata.org)
+
+
 ### [Python 之禅](https://www.python.org/doc/humor/#the-zen-of-python)
 * “实用胜于纯粹。”
 * “不能让特例特殊到开始破坏既定规则。”
+
 
 ### [Python Tutor](https://pythontutor.com/)
 * 是一个对 Python 运行原理进行可视化分析的工具
@@ -21,12 +28,24 @@
 * 是最符合规范的知识来源
 
 [维基百科 - 对象模型](http://en.wikipedia.org/wiki/Object_model)  
+
 [Python 数据模型](https://docs.python.org/3/reference/datamodel.html)  
+
+[memoryview 内存视图](https://stackoverflow.com/questions/4845418/when-should-a-memoryview-be-used/)
+* 内存视图其实是泛化和去数学化的 NumPy 数组。它让你在不需要复制内容的前提下，在数据结构之间共享内存。
+* 其中数据结构可以是任何形式，比如 PIL 图片、SQLite 数据库和 NumPy 的数组，等等。
+* 这个功能在处理大型数据集合的时候非常重要。
+
 
 Alex Martelli 的《Python 技术手册（第 2 版）》对数据模型的讲解很精彩。 Martelli 对属性访问机制的描述，
 应该是除了 CPython 中的 C 源码之外在这方面最权威的解释。Martelli 还是 Stack Overflow 上的高产贡献者，
 在他名下差不多有 5000 条答案，你也可以去他的 [Stack Overflow 主页](http://stackoverflow.com/users/95810/alex-martelli) 上看看。
 
+[“Sorting HOW TO”](https://docs.python.org/3/howto/sorting.html)
+* Python 官方网站，通过几个例子讲解了 sorted 和 list.sort 的高级用法。
+
+[“PEP 3132 — Extended Iterable Unpacking”](https://www.python.org/dev/peps/pep-3132/)
+* 算得上是使用 *extra 句法进行平行赋值的权威指南
 
 ### 引言的乐趣
 >> Tim Peters
