@@ -44,6 +44,10 @@ Alex Martelli 的《Python 技术手册（第 2 版）》对数据模型的讲�
 [“Sorting HOW TO”](https://docs.python.org/3/howto/sorting.html)
 * Python 官方网站，通过几个例子讲解了 sorted 和 list.sort 的高级用法。
 
+[Python 词汇表](https://docs.python.org/3/glossary.html#term-hashable)
+
+[“Built-in Types”](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict)
+
 [“PEP 3132 — Extended Iterable Unpacking”](https://www.python.org/dev/peps/pep-3132/)
 * 算得上是使用 *extra 句法进行平行赋值的权威指南
 
@@ -70,3 +74,9 @@ ABC Programmer’s Handbook
 > 
 > 你可能注意到了，之前提到的几个操作可以无差别地应用于文本、列表和表格上。
 我们把文本、列表和表格叫作数据火车……FOR 命令通常能作用于数据火车上。
+
+
+>> A. M. Kuchling
+《代码之美》第 18 章“Python 的字典类：如何打造全能战士”
+> 
+> 字典 dict 这个数据结构活跃在所有 Python 程序的背后，即便你的源码里并没有直接用到它。
