@@ -83,3 +83,10 @@ ABC Programmer’s Handbook
 《代码之美》第 18 章“Python 的字典类：如何打造全能战士”
 > 
 > 字典 dict 这个数据结构活跃在所有 Python 程序的背后，即便你的源码里并没有直接用到它。
+
+
+>> Esther Nam 和 Travis Fischer
+“Character Encoding and Unicode in Python”
+> 
+> 人类使用文本，计算机使用字节序列。
+
