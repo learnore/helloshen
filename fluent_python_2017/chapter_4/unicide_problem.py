@@ -4,8 +4,8 @@
   IDE         : PyCharm
   File Name   : unicide_problem
   Description : 字符问题
-                把 码位 转换成 字节序列 的过程是 编码
-                把 字节序列 转换成 码位 的过程是 解码
+                把 码位 转换成 字节序列 的过程是 编码（把字符串转换成二进制序列时）
+                把 字节序列 转换成 码位 的过程是 解码（把二进制序列转换成字符串时）
 
                 如果想帮助自己记住 .decode() 和 .encode() 的区别，可以把字节序列想成
                 晦涩难懂的机器磁芯转储，把 Unicode 字符串想成“人类可读”的文本。那
@@ -35,3 +35,7 @@ if __name__ == '__main__':
     print(cafe_arr[-1:])
 
     print(bytes.fromhex('31 4A CE A9'))     # 解析十六进制数字对（数字对之间的空格是可选的），构建二进制序列
+
+    for codec in ['latin_1', 'utf_8', 'utf_16']:
+        print(codec, 'El Niño'.encode(codec), sep='\t')
+

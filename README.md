@@ -7,7 +7,9 @@
 * [Netlib](http://www.netlib.org)
 * [Pandas](http://pandas.pydata.org)
 * [Blaze](http://blaze.pydata.org)
-
+* [统一字符编码侦测包 Chardet](https://pypi.python.org/pypi/chardet)
+* [PyUCA](https://pypi.python.org/pypi/pyuca/)
+* [unicodedata](https://docs.python.org/3/library/unicodedata.html)
 
 ### [Python 之禅](https://www.python.org/doc/humor/#the-zen-of-python)
 * “实用胜于纯粹。”
