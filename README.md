@@ -92,3 +92,9 @@ ABC Programmer’s Handbook
 > 
 > 人类使用文本，计算机使用字节序列。
 
+>> —Guido van Rossum
+Python 仁慈的独裁者
+> 
+> 不管别人怎么说或怎么想，我从未觉得 Python 受到来自函数式语言的太多影响。我
+非常熟悉命令式语言，如 C 和 Algol 68，虽然我把函数定为一等对象，但是我并不
+把 Python 当作函数式编程语言。
