@@ -8,6 +8,8 @@
   date        : 2022/5/4 22:16
 -------------------------------------------------
 """
+from functools import reduce            # 从 Python 3.0 起，reduce 不再是内置函数了
+from operator import add                # 导入 add，以免创建一个专求两数之和的函数
 
 
 def factorial(n):
@@ -44,3 +46,27 @@ if __name__ == '__main__':
     print(sorted(fruits, key=len))      # ['fig', 'apple', 'cherry', 'banana', 'raspberry', 'strawberry']   若想根据单词的长度排序，只需把 len 函数传给 key 参数
     print(reverse('testing'))           # gnitset
     print(sorted(fruits, key=reverse))      # ['banana', 'apple', 'fig', 'raspberry', 'strawberry', 'cherry']
+
+    """
+    * 计算阶乘列表：map 和 filter 与列表推导比较
+    """
+    print(list(map(fact, range(6))))
+    print([fact(i) for i in range(6)])
+    print(list(map(fact, filter(lambda n: n % 2, range(6)))))
+    print([fact(n) for n in range(6) if n % 2])
+
+    """
+    * 使用 reduce 和 sum 计算 0~99 之和
+    """
+    print(reduce(add, range(100)))
+    print(sum(range(100)))          # 使用 sum 做相同的求和；无需导入或创建求和函数
+
+    """
+    * all 和 any 也是内置的归约函数。
+    * all(iterable)
+    *     如果 iterable 的每个元素都是真值，返回 True；all([]) 返回 True。
+    * any(iterable)
+    *     只要 iterable 中有元素是真值，就返回 True；any([]) 返回 False。
+    """
+    print(all([]))
+    print(any([]))
