@@ -3,7 +3,7 @@
 -------------------------------------------------
   IDE         : PyCharm
   File Name   : auto_jd_beans
-  Description : 需要获取 pt_pin & pt_key
+  Description : pt_pin & pt_key ： https://github.com/learnore/helloshen/blob/main/base_summary/jpg/jd_pt.jpg
   Author      : chenyushencc@gmail.com
   date        : 2022/8/17 20:47
   copyright   : https://blog.csdn.net/qq_36624086/article/details/124222012
@@ -30,8 +30,8 @@ headers = {
               "pre_seq=0;"
               "pre_session=3acd1f6361f86fc0a1bc23971b2e7bbe6197afb6|143;"
               "unpl=JF8EAKZnNSttWRkDURtVThUWHAgEWw1dH0dXOjMMAFVcTQQAEwZORxR7XlVdXhRKFx9sZhRUX1NIVw4YBCsiEEpcV1ZVC0kVAV9XNVddaEpkBRwAExEZQ1lWW1kMTBcEaWcAUVpeS1c1KwUbGyB7bVFeXAlOFQJobwxkXGhJVQQZBR0UFU1bZBUzCQYXBG1vBl1VXElRAR8FGxUWS1hRWVsISCcBb2cHUm1b%7CV2_ZzNtbRYAFxd9DUNcKRxYB2ILGloRUUYcIVpAAHsbWQZjVBEJclRCFnUUR11nGlgUZgIZXkFcQRRFCEJkexhdB24LFFtEUHMQfQ5GXH0pXAQJbRZeLAcCVEULRmR6KV5VNVYSCkVVRBUiAUEDKRgMBTRREV9KUUNGdlxAByhNWwVvBUIKEVBzJXwJdlR6GF0GZAoUWUdRQCUpUBkCJE0ZWTVcIlxyVnMURUooDytAGlU1Vl9fEgUWFSIPRFN7TlUCMFETDUIEERZ3AEBUKBoIAzRQRlpCX0VFIltBZHopXA%253d%253d;"
-              "pt_key=;"     # TODO
-              "pt_pin=;"        # TODO
+              "pt_key=AAJi_OGvADB4Z96tf74P6hlaTY0vjwv1BtRmavl-IzB8kVi5KVlsDJC1xmaiRg-eNsAoKJ7BKh8;"     # TODO
+              "pt_pin=jd_540ff647c9d01;"        # TODO
               "pwdt_id=jd_505bacd333f6b;"
               "sid=1b2c8b7ce820c4188f048e689bf58c8w;"
               "visitkey=36446698972455355"
