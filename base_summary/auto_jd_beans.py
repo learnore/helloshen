@@ -5,6 +5,10 @@
   File Name   : auto_jd_beans
   Description : 1 京东官网地址：https://www.jd.com/
                 2 pt_pin & pt_key ： https://github.com/learnore/helloshen/blob/main/base_summary/jpg/jd_pt.jpg
+
+                nohup python auto_jd_beans.py > auto_jd_beans.log 2>&1 &
+                ps aux | grep "auto_jd_beans.py"
+
   Author      : chenyushencc@gmail.com
   date        : 2022/8/17 20:47
   copyright   : https://blog.csdn.net/qq_36624086/article/details/124222012
@@ -15,6 +19,9 @@ from datetime import datetime
 from apscheduler.schedulers.blocking import BlockingScheduler
 
 sched = BlockingScheduler(timezone='Asia/Shanghai')
+
+pt_pin = "jd_540ff647c9d01"
+pt_key = "AAJjKxndADCqCMlejtZb6E8-xt_bFxmpmmcR3b600h9rG2P7AlT6xt4BMVlH4YATBHQoDGWus"
 
 
 @sched.scheduled_job('cron', hour=6, minute=30)  # """ 每日 06:30 定时执行一次 """
@@ -38,8 +45,8 @@ def get_jd_beans():
                   "pre_seq=0;"
                   "pre_session=3acd1f6361f86fc0a1bc23971b2e7bbe6197afb6|143;"
                   "unpl=JF8EAKZnNSttWRkDURtVThUWHAgEWw1dH0dXOjMMAFVcTQQAEwZORxR7XlVdXhRKFx9sZhRUX1NIVw4YBCsiEEpcV1ZVC0kVAV9XNVddaEpkBRwAExEZQ1lWW1kMTBcEaWcAUVpeS1c1KwUbGyB7bVFeXAlOFQJobwxkXGhJVQQZBR0UFU1bZBUzCQYXBG1vBl1VXElRAR8FGxUWS1hRWVsISCcBb2cHUm1b%7CV2_ZzNtbRYAFxd9DUNcKRxYB2ILGloRUUYcIVpAAHsbWQZjVBEJclRCFnUUR11nGlgUZgIZXkFcQRRFCEJkexhdB24LFFtEUHMQfQ5GXH0pXAQJbRZeLAcCVEULRmR6KV5VNVYSCkVVRBUiAUEDKRgMBTRREV9KUUNGdlxAByhNWwVvBUIKEVBzJXwJdlR6GF0GZAoUWUdRQCUpUBkCJE0ZWTVcIlxyVnMURUooDytAGlU1Vl9fEgUWFSIPRFN7TlUCMFETDUIEERZ3AEBUKBoIAzRQRlpCX0VFIltBZHopXA%253d%253d;"
-                  "pt_key="
-                  "pt_pin="
+                  "pt_key=" + pt_key + ";"
+                  "pt_pin=" + pt_pin + ";"
                   "pwdt_id=jd_505bacd333f6b;"
                   "sid=1b2c8b7ce820c4188f048e689bf58c8w;"
                   "visitkey=36446698972455355"
