@@ -6,8 +6,9 @@
   Description : 1 京东官网地址：https://www.jd.com/
                 2 pt_pin & pt_key ： https://github.com/learnore/helloshen/blob/main/base_summary/jpg/jd_pt.jpg
 
-                nohup python auto_jd_beans.py > auto_jd_beans.log 2>&1 &
                 ps aux | grep "auto_jd_beans.py"
+                kill -9 xxxxx
+                nohup python auto_jd_beans.py > auto_jd_beans.log 2>&1 &
 
   Author      : chenyushencc@gmail.com
   date        : 2022/8/17 20:47
