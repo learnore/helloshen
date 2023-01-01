@@ -8,11 +8,13 @@
   date        : 2022/11/29 22:19
 -------------------------------------------------
 """
+import random
 from collections import OrderedDict
 from queue import Queue
 
 
 def is_if_queue():
+    """ Queue 队列的 get() 会根据“先进先出”原则，弹出一个 """
     q = Queue()
     q.put(1)
     q.put(2)
@@ -33,7 +35,7 @@ def queue_or_stack_ordereddict():
     l = []          # 栈(数组)
     l.append(1)
     l.pop(0)        # pop 移除索引位置 --"未加参数时直接移除数组的末尾元素"
-    l.remove(1)     # remove 移除具体的值
+    l.remove(1)     # remove 移除具体的值  
     len(l)          # 判空
 
     o = OrderedDict()
@@ -43,7 +45,10 @@ def queue_or_stack_ordereddict():
     o.pop(1)        # pop(key)     OrderedDict([(2, 5), (3, 6)])
     o.keys()        # 获取 o 的所有 key 值        odict_keys([2, 3])
 
+    dict1 = {'a': 1}
+    print(dict1.get('c', "happy new year~ dear"))       # happy new year~ dear
+
 
 if __name__ == "__main__":
-    is_if_queue()
-    queue_or_stack_ordereddict()
+    black = {b for b in [1, 2, 3, 4]}
+    print(black)
