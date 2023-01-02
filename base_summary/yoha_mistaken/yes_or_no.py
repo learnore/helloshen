@@ -35,7 +35,7 @@ def queue_or_stack_ordereddict():
     l = []          # 栈(数组)
     l.append(1)
     l.pop(0)        # pop 移除索引位置 --"未加参数时直接移除数组的末尾元素"
-    l.remove(1)     # remove 移除具体的值  
+    l.remove(1)     # remove 移除具体的值
     len(l)          # 判空
 
     o = OrderedDict()
