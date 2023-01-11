@@ -8,7 +8,6 @@
   date        : 2022/11/29 22:19
 -------------------------------------------------
 """
-import random
 from collections import OrderedDict
 from queue import Queue
 
@@ -31,6 +30,7 @@ def queue_or_stack_ordereddict():
     q.put(1)
     q.get()
     q.empty()
+    q.full()
 
     l = []          # 栈(数组)
     l.append(1)
@@ -46,9 +46,21 @@ def queue_or_stack_ordereddict():
     o.keys()        # 获取 o 的所有 key 值        odict_keys([2, 3])
 
     dict1 = {'a': 1}
-    print(dict1.get('c', "happy new year~ dear"))       # happy new year~ dear
+    print(dict1.get('c', "happy new year~ dear"))       # happy new year~ dear  字典默认值 .get(key, 默认值)
+
+
+def str_or_touple():
+    print(("123",))     # ('123',)      元组
+    print(("123"))      # 123           字符串
 
 
 if __name__ == "__main__":
-    black = {b for b in [1, 2, 3, 4]}
-    print(black)
+    q = Queue(maxsize=1)  # 队列
+    q.put(1)
+    print(q.full())
+    q.get()
+    q.put(2)
+    print(q.full())
+    q.get()
+    print(q.empty())
+    print(q.full())
