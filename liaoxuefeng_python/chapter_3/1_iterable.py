@@ -6,7 +6,7 @@
   Description : 迭代 & 生成器 & 迭代器
                 凡是可作用于for循环的对象都是Iterable类型
                 凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列
-                集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。
+                集合数据类型如 list、dict、str 等是 Iterable 但不是 Iterator，不过可以通过 iter() 函数获得一个 Iterator 对象。
 
   Author      : chenyushencc@gmail.com
   date        : 2022/11/14 21:44
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     """ II 生成器 generator: 一边循环一边计算 """
     g = (x * x for x in range(10))    # () 创建一个generator
     L = [x * x for x in range(10)]    # [] list
-    print(next(g))
+    print(next(g))      # 0
 
     """
     # 这里，最难理解的就是generator函数和普通函数的执行流程不一样。
