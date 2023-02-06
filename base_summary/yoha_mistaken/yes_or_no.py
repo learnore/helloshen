@@ -34,6 +34,15 @@ def queue_or_stack_ordereddict():
 
     l = []          # 栈(数组)
     l.append(1)
+    """
+    my_arr = [4,5] + [1,2,3]    # [4,5].extend([1,2,3])
+    print(my_arr)
+    arr1 = [4,5]
+    arr2 = [1,2,3]
+    arr1.extend(arr2)       # extend 只是一个扩充的“动作”，是没有返回值的，所以 结果是 None
+    print(arr1)
+    print([4,5].extend([1,2,3]))    # extend 只是一个扩充的“动作”，是没有返回值的，所以 结果是 None
+    """
     l.pop(0)        # pop 移除索引位置 --"未加参数时直接移除数组的末尾元素"
     l.remove(1)     # remove 移除具体的值
     len(l)          # 判空

@@ -24,7 +24,7 @@ if __name__ == "__main__":
     print(ord("A"))     # 65
     print(ord("a"))     # 97
     print(ord("0"))     # 48
-    print(chr(65))     # A
+    print(chr(65))      # A
 
     """
     小进制 <—— 十进制（通过十进制过滤转换） ——> 大进制
@@ -57,4 +57,16 @@ if __name__ == "__main__":
 
     # <<：左移动运算符
     print(3 << 1)       # 6
+
+    """
+    set
+    """
+    # set 集合位运算
+    print(set({1,2,3,4}) & set({2,3,4,5}))      # {2, 3, 4}
+    # == 因为 set 和 dict 在内存中所存储的规则都是用的 hash 方式，所以开一段内存后，将数值按照相同的规则存储，肯定就是相等的啦
+    print(set({2,3,4}) == set({3,4,2}))     # True      == 会调用默认的 __eq__() 方法
+    print(dict({"a": 1, "b": 2, "c": 3}) == dict({"b": 2, "a": 1, "c": 3}))     # True
+    # set 就算写的一样也是不同的id哦
+    print(set({2,3,4}) is set({3,4,2}))     # False
+    print(set({2,3,4}) is set({2,3,4}))     # False
 
