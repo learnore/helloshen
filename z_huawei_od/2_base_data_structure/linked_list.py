@@ -8,10 +8,9 @@
   date        : 2023/2/6 9:36
 -------------------------------------------------
 """
-# Definition for singly-linked list.
 import heapq
 
-
+# Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
         self.val = x

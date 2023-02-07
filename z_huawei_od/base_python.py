@@ -136,3 +136,10 @@ if __name__ == "__main__":
     heapq.heappop(min_heapq)        # 出堆 [2,3]  出2
     print(min_heapq)                # [3]
     # TODO 思维/小技巧：如果是想使用 大堆 的话，将值取负就可以了！！！
+
+    """
+    数组 最大值 & 最大值的索引（多个返回第一个）
+    """
+    my_arr_max = [1,2,3,6,6,4,5]
+    print(max(my_arr_max))      # 6
+    print(my_arr_max.index(max(my_arr_max)))        # 3 多个返回第一个
