@@ -6,9 +6,15 @@
   Description : 1 京东官网地址：https://www.jd.com/
                 2 pt_pin & pt_key ： https://github.com/learnore/helloshen/blob/main/base_summary/jpg/jd_pt.jpg
 
-                ps aux | grep "auto_jd_beans.py"
-                kill -9 xxxxx
-                nohup python auto_jd_beans.py > auto_jd_beans.log 2>&1 &
+                1 进入腾讯控制台后，选中服务器，用“密码/密钥登录”，用 root 账户
+                2 ps aux | grep "auto_jd_beans.py"
+                3 kill -9 xxxxx
+                4 编辑linux文本：
+                        vim auto_jd_beans.py
+                        点击按键 i
+                        Esc 退出编辑
+                        :wq 保存并退出
+                5 nohup python auto_jd_beans.py > auto_jd_beans.log 2>&1 &
 
   Author      : chenyushencc@gmail.com
   date        : 2022/8/17 20:47
@@ -22,7 +28,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 sched = BlockingScheduler(timezone='Asia/Shanghai')
 
 pt_pin = "jd_540ff647c9d01"
-pt_key = "AAJjKxndADCqCMlejtZb6E8-xt_bFxmpmmcR3b600h9rG2P7AlT6xt4BMVlH4YATBHQoDGWus"
+pt_key = "xxxxx"
 
 
 @sched.scheduled_job('cron', hour=6, minute=30)  # """ 每日 06:30 定时执行一次 """
