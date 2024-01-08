@@ -45,3 +45,10 @@ if __name__ == "__main__":
     a = int(input())                                # 一行 1个输入
     len_a, len_b = map(int, input().split())        # 一行多个输入
     A = list(map(int, input().split()))             # 一行多个输入，并变 list
+
+    """ 多个输入 """
+    while True:
+        try:
+            offset, size = map(int, input().split())        # 多个
+        except EOFError:
+            break

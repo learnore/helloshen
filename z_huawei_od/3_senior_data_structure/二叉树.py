@@ -2,11 +2,20 @@
 """
 -------------------------------------------------
   IDE         : PyCharm
-  File Name   : erchashu
-  Description : 二叉树
+  File Name   : 二叉树
+  Description :
+  Summary     :
+    1、递归时，考虑 if not root 的情况
+    2、
+
   Author      : chenyushencc@gmail.com
   date        : 2023/2/6 13:59
 -------------------------------------------------
+"""
+
+"""
+https://www.nowcoder.com/practice/508378c0823c423baa723ce448cbfd0c
+
 """
 
 # Definition for a binary tree node.

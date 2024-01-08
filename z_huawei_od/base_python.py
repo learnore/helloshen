@@ -102,11 +102,11 @@ if __name__ == "__main__":
     数组
     """
     my_arr = [4,5] + [1,2,3]    # [4,5].extend([1,2,3])
-    print(my_arr)
+    print(my_arr)               # [4, 5, 1, 2, 3]
     arr1 = [4,5]
     arr2 = [1,2,3]
-    arr1.extend(arr2)       # extend 只是一个扩充的“动作”，是没有返回值的，所以 结果是 None
-    print(arr1)
+    arr1.extend(arr2)
+    print(arr1)                 # [4, 5, 1, 2, 3]
     print([4,5].extend([1,2,3]))    # extend 只是一个扩充的“动作”，是没有返回值的，所以 结果是 None
 
     """

@@ -9,7 +9,7 @@
                 1 进入腾讯控制台后，选中服务器，用“密码/密钥登录”，用 root 账户
                 2 ps aux | grep "auto_jd_beans.py"
                 3 kill -9 xxxxx
-                4 编辑linux文本：
+                4 cd ali_shen/my_ideas/jd_beans/，编辑linux文本：
                         vim auto_jd_beans.py
                         点击按键 i
                         Esc 退出编辑
