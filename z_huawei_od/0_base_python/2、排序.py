@@ -26,3 +26,27 @@ if __name__ == "__main__":
     # 提取排序后的学生编号
     result = [student[0] for student in students]
     print(result)       # [2, 3, 1, 4]
+
+    """
+    小技巧： 
+    x[1]要从大到小排序
+    x[0].lower() 又要从小到大排序
+    则将 x[1] 添上负号，然后统一从小到大排序即可
+    """
+    [(123, "asd"), (123, "wer")].sort(key=lambda x: (-x[1], x[0].lower()), reverse=False)
+
+
+    """
+    其他处理方式
+    """
+    # 报错 TypeError: sort() takes no positional arguments
+    # flights.sort(lambda x: (x[:2], int(x[2:])), reverse=False)
+    # 改用 sorted(list, key=lambda x:(x[])) 格式
+    """
+    解释：
+    x[:2] 前2位按照从小到大排序
+    int(x[2:]) 后几位先变成int后从小到大排序
+    """
+    sorted_list = sorted(["CA3385", "CZ6678", "SC6508", "DU7523", "HK4456", "MK0987"],
+                         key=lambda x: (x[:2], int(x[2:])))
+
