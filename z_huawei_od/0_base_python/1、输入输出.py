@@ -26,6 +26,7 @@ if __name__ == "__main__":
 
     # 2 用空格代替换行
     """
+    空格输出
     1 2 3
     """
     for student in [1, 2, 3]:
@@ -33,6 +34,7 @@ if __name__ == "__main__":
 
     # 3
     """
+    换行输出
     1
     2
     3
@@ -41,12 +43,8 @@ if __name__ == "__main__":
         print(student)
 
 
-
-
-
     """ 输入 """
     a = int(input())                                # 一行 1个输入
-    len_a, len_b = map(int, input().split())        # 一行多个输入
     A = list(map(int, input().split()))             # 一行多个输入，并变 list
 
     """ 多个输入

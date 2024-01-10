@@ -38,7 +38,7 @@ if __name__ == '__main__':
     my_tag = {
         'name': 'img',
         'title': 'Sunset Boulevard',
-        'src': 'sunset.jpg',
+        'src': 'sunset.images',
         'cls': 'framed'
     }
-    print(tag(**my_tag))        # <img class="framed" src="sunset.jpg" title="Sunset Boulevard" />
+    print(tag(**my_tag))        # <img class="framed" src="sunset.images" title="Sunset Boulevard" />

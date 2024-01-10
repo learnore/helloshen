@@ -4,7 +4,7 @@
   IDE         : PyCharm
   File Name   : auto_jd_beans
   Description : 1 京东官网地址：https://www.jd.com/
-                2 pt_pin & pt_key ： https://github.com/learnore/helloshen/blob/main/base_summary/jpg/jd_pt.jpg
+                2 pt_pin & pt_key ： https://github.com/learnore/helloshen/blob/main/tools/images/jd_pt.jpg
 
                 1 进入腾讯控制台后，选中服务器，用“密码/密钥登录”，用 root 账户
                 2 ps aux | grep "auto_jd_beans.py"
