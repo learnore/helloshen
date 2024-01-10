@@ -16,11 +16,10 @@ if __name__ == "__main__":
 
     # 使用Counter统计元素个数
     count_result = Counter(data)
-    max_valus = max(count_result.values())
-    print(max_valus)                # 统计中，数量最大是多少
-
-    print(count_result.total())     # 数组的元素个数/统计的所有个数
+    print(count_result["1"])            # count_result 当作字典用
+    print(max(count_result.values()))   # 统计中，数量最大是多少
+    print(count_result.total())         # 数组的元素个数/统计的所有个数
 
     # 输出统计结果
-    for element, count in count_result.items():     # element, count in count_result.items()
-        print(f"{element}: {count}")
+    for key, value in count_result.items():     # key, value in count_result.items()
+        print(f"{key}: {value}")
