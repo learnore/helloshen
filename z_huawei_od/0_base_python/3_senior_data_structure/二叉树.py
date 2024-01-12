@@ -163,6 +163,10 @@ class Solution:
         return self.build(postorder, 0, len(postorder) - 1, inorder, 0, len(inorder) - 1)
 
     def build(self, postorder, post_start, post_end, inorder, in_start, in_end):
+        """
+        postorder 后序序列
+        inorder   中序序列
+        """
         if post_start > post_end:
             return
 
