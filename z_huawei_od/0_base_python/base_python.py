@@ -53,22 +53,7 @@ if __name__ == "__main__":
     print(round(4.5), round(5.5), round(6.5), round(7.5))     # 4 6 6 8     TODO 坑-round 奇进偶舍，4 6 是偶数直接舍弃  5，7是奇数
     print(round(4.3), round(5.3), round(6.3), round(7.3))     # 4 5 6 7
 
-    """
-    排序
-    """
-    # sorted
-    print(sorted({0: 1, 2: 2, 1: 3}.items(), reverse=True))        # [(2, 2), (1, 3), (0, 1)]      按照 key
-    # 注意这里 sorted 后的数据，返回的是一个数组里面包裹的是元组哦
-    print(sorted({0: 1, 2: 2, 1: 3}.items(), key=lambda x: x[1], reverse=True))     # [(1, 3), (2, 2), (0, 1)]      按照 value
-    # 使用两个元素进行升序排序，在第一个元素升序的情况下，第二个元素也升序排序
-    print(sorted([(6, 4), (6, 8), (6, 7), (7, 1)], key=lambda x: (x[0], x[1])))     # [(6, 4), (6, 7), (6, 8), (7, 1)]
-    # 在第一个元素升序的情况下，第二个元素的 负号（反方向）升序/即就是降序排序即可
-    print(sorted([(6, 4), (6, 8), (6, 7), (7, 1)], key=lambda x: (x[0], -x[1])))    # [(6, 8), (6, 7), (6, 4), (7, 1)]
 
-    # sort
-    sort1 = [(2, 43), (1, 65), (7, 42)]
-    sort1.sort(key=lambda x: x[0])
-    print(sort1)        # [(1, 65), (2, 43), (7, 42)]
     """
     执行表达式
     """
@@ -140,6 +125,6 @@ if __name__ == "__main__":
     """
     数组 最大值 & 最大值的索引（多个返回第一个）
     """
-    my_arr_max = [1,2,3,6,6,4,5]
+    my_arr_max = [1, 2, 3, 6, 6, 4, 5]
     print(max(my_arr_max))      # 6
     print(my_arr_max.index(max(my_arr_max)))        # 3 多个返回第一个
