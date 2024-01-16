@@ -5,6 +5,7 @@
   File Name   : python_bin_turn
   Description : 进制转换 + 位运算
                 参考博客：https://blog.csdn.net/weixin_45503064/article/details/127546793
+  Summary     : T30
   Author      : chenyushencc@gmail.com
   date        : 2023/2/2 22:42
 -------------------------------------------------
