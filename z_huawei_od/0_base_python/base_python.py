@@ -74,10 +74,22 @@ if __name__ == "__main__":
     print("123^%$&*$$(ASDASD".isupper())   # True
 
     """
-    素数/质数的判断逻辑：不能被从2开始到自己前一个数整除即可
+    素数/质数的判断逻辑：不能被从2开始到自己前一个数整除即可   T37[100]
     """
     def is_sushu(n):
         for i in range(2, n):
+            if n % i == 0:
+                return False
+
+        return True
+
+
+    def is_prime(n):
+        """ 判断n是否是素数：除了1和本身，不能被其他数整除 """
+        if n < 2:
+            return False
+
+        for i in range(2, int(n ** 0.5) + 1):
             if n % i == 0:
                 return False
 
