@@ -44,7 +44,7 @@ def rename_files_in_folder(folder_path):
     files = os.listdir(folder_path)
 
     # 遍历文件并修改名称
-    count = 1
+    count = 39
     for old_name in files:
         # 构建新的文件名
         file_extension = os.path.splitext(old_name)[1]  # 获取文件扩展名
