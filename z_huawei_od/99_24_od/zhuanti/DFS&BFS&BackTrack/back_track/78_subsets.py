@@ -37,7 +37,6 @@ class Solution:
             track.pop()
 
 
-
 if __name__ == "__main__":
     s = Solution()
     s.subsets([1,2,3])
