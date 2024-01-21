@@ -9,6 +9,7 @@
 -------------------------------------------------
 """
 
+
 def check_even_odd(number):
     """
     判断一个数是偶数还是奇数
@@ -21,3 +22,4 @@ def check_even_odd(number):
 
 if __name__ == "__main__":
     check_even_odd(7)
+
