@@ -2,7 +2,7 @@
 """
 -------------------------------------------------
   IDE         : PyCharm
-  File Name   : 1
+  File Name   : 1 API集群负载统计（简单判断）
   Description :
 
 -------- 示例1 --------
@@ -34,6 +34,7 @@
 
 
 def count_keyword_frequency(logs, level, keyword):
+    """ 从一堆 logs 中，统计单个 log 的第 level 层是不是 keyword """
     frequency = 0
     for log in logs:
         # 将URL按照/分割成层级

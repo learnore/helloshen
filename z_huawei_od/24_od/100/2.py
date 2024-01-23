@@ -56,7 +56,7 @@ def find_minimum_swap(A, B):
 
     """
     # 等式： (a_cpu - b_cpu) *2 = total_difference
-    # 从A中取一个数，从B中取一个数，2数只差的2备，是sum之差，则就选这两个
+    # 从A中取一个数，从B中取一个数，2数之差的2倍，是sum之差，则就选这两个
     """
 
 
