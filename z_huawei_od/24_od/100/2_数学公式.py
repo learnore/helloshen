@@ -44,6 +44,12 @@
 
 
 def find_minimum_swap(A, B):
+    """
+    要求 A B 数组里面各拿一个进行交换，使得2个的和相等（也就是说让2个的和之差为0）
+    解题思路：
+    # 等式： (a_cpu - b_cpu) *2 = total_difference
+    # 从A中取一个数，从B中取一个数，2数之差的2倍，是sum之差，则就选这两个
+    """
     A.sort()        # 题目要求A中最小的进行交换，将list数据排序
 
     total_difference = sum(A) - sum(B)      # 计算2个CPU合力之差
@@ -53,11 +59,6 @@ def find_minimum_swap(A, B):
         target_b_cpu = a_cpu - (total_difference // 2)
         if target_b_cpu in b_set:
             return a_cpu, target_b_cpu
-
-    """
-    # 等式： (a_cpu - b_cpu) *2 = total_difference
-    # 从A中取一个数，从B中取一个数，2数之差的2倍，是sum之差，则就选这两个
-    """
 
 
 if __name__ == "__main__":

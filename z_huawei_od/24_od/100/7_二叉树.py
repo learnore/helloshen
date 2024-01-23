@@ -18,6 +18,8 @@ class TreeNode:
 
 
 def total_time_to_receive_whisper(root):
+    """ 求二叉树的最长的数之和 """
+    # base case / 参数判空
     if not root:
         return 0
 

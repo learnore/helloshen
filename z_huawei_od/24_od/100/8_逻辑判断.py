@@ -86,7 +86,6 @@ if __name__ == "__main__":
     request_size = int(input().strip())
     allocated_memory = []
 
-    #
     # for _ in range(2):
     #     offset, size = map(int, input().split())
     #     allocated_memory.append((offset, size))

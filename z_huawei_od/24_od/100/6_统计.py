@@ -32,19 +32,20 @@ from collections import Counter
 
 
 def find_mode(input_array):
+    """ 找出 """
     count_dict = Counter(input_array)           # 用 collections.Counter 语法糖
-
     max_count = max(count_dict.values())        # 找出最大的统计数
     modes = [element for element, count in count_dict.items() if count == max_count]     # 注意众数可能不止一种，找出最大的统计数所对应的元素
 
     new_array = []
     for _ in range(max_count):
-        new_array.extend(modes)
+        new_array.extend(modes)         # extend 合并
 
     return new_array
 
 
 def calculate_median(new_array):
+    """ 计算中位数 """
     new_array.sort()
     n = len(new_array)
     if n % 2 == 0:  # 偶数
@@ -52,6 +53,7 @@ def calculate_median(new_array):
         mid_2 = mid_1-1
 
         mid_number = (new_array[mid_1] + new_array[mid_2]) / 2
+
     else:
         mid = int((n-1)/2)
         mid_number = new_array[mid]
