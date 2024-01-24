@@ -31,12 +31,15 @@ def mars_language(input_str):
         left = input_str[:idx]
         right = input_str[idx+1:]
         return 2*mars_language(left) + 3*mars_language(right) + 4
+
     elif "$" in input_str:
         idx = input_str.rindex("$")  # 找到最后一个 # 的下标
         left = input_str[:idx]
         right = input_str[idx + 1:]
         return 3*mars_language(left) + mars_language(right) + 2
+
     else:
+        # base case
         return int(input_str)
 
 
