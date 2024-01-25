@@ -44,7 +44,7 @@ def is_valid_password(password):
     is_upper = any(i.isupper() for i in password)
     is_lower = any(i.islower() for i in password)
     is_digit = any(i.isdigit() for i in password)
-    is_special = any(not (i.isalpha() or i.isdigit()) for i in password)        # 不全是数字和字母
+    is_special = any(not (i.isalpha() or i.isdigit()) for i in password)        # **** 不全是数字和字母 ***
 
     return all([is_long, is_upper, is_lower, is_digit, is_special])         # all(    [    ]     )
 

@@ -7,7 +7,7 @@
 
 🎃样例0
 输入
-5
+6
 3 1 2 5 7 9
 8
 输出
@@ -69,15 +69,14 @@ def solution(n, capacity, sum_capacity):
         else:
             break
 
-    left = 0
-    right = len(capacity)-1
+    left, right = 0, len(capacity)-1        # 数组的左右下标指针
     while left <= right:
         if capacity[left] + capacity[right] >= sum_capacity:
             results += 1
             left += 1
             right -= 1
         else:
-            left += 1           # ????
+            left += 1
 
     return results
 

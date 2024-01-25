@@ -38,14 +38,14 @@ abcde
 def solution(s, l):
     """ 双指针，按顺序依 s 次序在 l 中查找字符 """
     result = -1
-    s_point, l_point = 0, 0
+    left = 0
     for i in range(len(l)):
-        if s_point == len(s):
+        if left == len(s):
             return i-1
-        elif l[i] == s[s_point]:
-            s_point += 1
+        elif l[i] == s[left]:
+            left += 1
 
-    if s_point == len(s):
+    if left == len(s):
         return len(l)-1
 
     return result

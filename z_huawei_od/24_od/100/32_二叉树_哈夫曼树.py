@@ -32,7 +32,7 @@ class TreeNode:
         self.right = right
 
     # 放入小根堆时，方便自身比较 ，不然发送错误 ：TypeError: '<' not supported between instances of 'TreeNode' and 'TreeNode'
-    def __lt__(self, other):
+    def __lt__(self, other):            # ****************
         return self.val < other.val
 
 
