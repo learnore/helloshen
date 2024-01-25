@@ -23,6 +23,19 @@ tstc
 输出
 ctst
 
+---------- 用例 -------------
+输入
+220*19*20*
+输出
+btst
+
+---------- 用例 -------------
+输入
+20*19*20*
+输出
+tst
+
+
   Summary     : 1、1-9 翻译成 a-i
                 2、10*-26* 翻译成 j-z
                 3、
@@ -40,6 +53,9 @@ def decrypt(s):
     for i in range(len(s)):
         if s[i] == "*":
             # 转换字符，清空临时字符串
+            if len(temp_str) == 3:
+                results += chr(int(temp_str[0]) + 96)
+                temp_str = temp_str[1:]
             results += chr(int(temp_str) + 96)
             temp_str = ""
 
