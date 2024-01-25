@@ -48,6 +48,7 @@ def solution(input_list_1, input_list_2, k):
             sum_list.append(i+j)
 
     sum_list.sort(key=lambda x: x, reverse=False)
+
     result = 0
     for i in range(k):
         result += sum_list[i]

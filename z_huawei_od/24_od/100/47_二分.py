@@ -32,7 +32,7 @@ def solution(input_list, xiaoming):
     """ 算法复杂度要求不超过 O(log2n) """
     left, right = 0, len(input_list)-1
     while left <= right:
-        mid = left + (right - left)//2
+        mid = left + (right - left)//2          # ********
         if input_list[mid] < xiaoming:
             left = mid +1
         elif input_list[mid] > xiaoming:

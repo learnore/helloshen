@@ -15,7 +15,7 @@
 
 def solution(m, input_list, n):
     """
-    解决方案
+    解题思路
     1、去重 set 集合
     2、排序
     3、前N和 + 后N和

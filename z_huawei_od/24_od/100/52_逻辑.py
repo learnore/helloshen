@@ -41,6 +41,7 @@ def solution(n, highs):
     """
     题目含义：给一组小朋友身高，当前排列顺序中，比自己身高高的第一个小朋友就是自己的朋友，输出朋友的位置
     """
+    # 初始化
     results = [0 for _ in range(n)]
 
     for i in range(n):
