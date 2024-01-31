@@ -2,8 +2,24 @@
 """
 -------------------------------------------------
   IDE         : PyCharm
-  File Name   : 0
-  Description : 
+  File Name   : 暴力穷举 回溯框架
+  Description :
+
+
+result = []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.append(路径)
+        return
+
+    for choice in 选择列表:
+        1 排除选项
+
+        2 做选择
+        3 backtrack(路径, 选择列表)
+        4 撤销选择
+
+
   Summary     : 1、
                 2、
                 3、
