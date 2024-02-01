@@ -47,22 +47,23 @@ class Solution:
 
 
 if __name__ == "__main__":
-    """
-    双向队列
-    """
+    """ 双向队列 """
     dq = deque()
     dq.append(1)
     dq.append(2)
     dq.append(3)
+    print(len(dq))              # 双向队列大小 3 这里用 len()
     dq.pop()
     dq.popleft()
-    print(dq)       # deque([2])
+    print(dq)                   # deque([2])
 
-    q = Queue(maxsize=2)
-    q.put(1)
-    q.put(2)
-    print(q.empty())       # 判空     False
-    print(q.full())        # 判满     True
-    if q.get():            # if 判断也会用掉一次，出一次队列
+    """ 队列 """
+    queue = Queue(maxsize=2)
+    queue.put(1)
+    queue.put(2)
+    print(queue.qsize())       # 队列大小     2 ******* 这里不可以用 len(queue)
+    print(queue.empty())       # 判空     False
+    print(queue.full())        # 判满     True
+    if queue.get():            # if 判断也会用掉一次，出一次队列
         pass
-    print(q.full())        # False 因为 get 消耗了队列里的一个元素了
+    print(queue.full())        # False 因为 get 消耗了队列里的一个元素了
