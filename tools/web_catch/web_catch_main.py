@@ -15,8 +15,11 @@
 
                 其他
                 1、rm -rf helloshen      # 删除整个文件夹且不用逐一询问
+                   cd helloshen/tools/web_catch
                 2、git clone https://github.com/learnore/helloshen.git       # 克隆 github 项目（也可以不克隆整个项目，个人随意）
-                3、nohup python web_catch_main.py > web_catch.log 2>&1 &
+                3、nohup python web_catch_main.py > web_catch_main.log 2>&1 &
+                4、ps aux | grep "web_catch_main.py"
+                5、kill -9 xxxxx
 
   Author      : chenyushencc@gmail.com
   date        : 2024/3/13 10:31

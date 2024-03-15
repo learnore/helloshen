@@ -24,7 +24,7 @@ def set_email():
     authentication = ''     # TODO 授权码
     receiver_email = 'your_email@163.com'
     subject = 'Web Catch Email'
-    body = 'This is a test email sent from ShenYuChen`s Web Catch.'
+    body = 'Web Catch start~\nGood news is coming~'
     attachment_path = 'dedails.txt'  # 附件路径，也决定附件的名称，如果不需要附件可以设置为 None
 
     send_email(sender_email, authentication, receiver_email, subject, body, attachment_path)
