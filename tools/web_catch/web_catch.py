@@ -52,7 +52,7 @@ async def check_update(name, url, catch_class, last_content):
 
             last_content = new_content
         else:
-            print(f"{now} {name} 网站暂无更新")
+            print(f"{now} 网站暂无更新 {name}")
 
         await asyncio.sleep(60)  # 间隔60秒再次检查
 
