@@ -6,11 +6,18 @@
   Description : 启动程序
 
                 暂不支持名单整理
-                · B站(要验证)
+                1、 B站(要验证)
 
-  Summary     : 1、
-                2、
-                3、
+
+  Summary     : 准备环境
+                1、pip install beautifulsoup4
+                2、修改邮件授权码
+
+                其他
+                1、rm -rf helloshen      # 删除整个文件夹且不用逐一询问
+                2、git clone https://github.com/learnore/helloshen.git       # 克隆 github 项目（也可以不克隆整个项目，个人随意）
+                3、nohup python web_catch_main.py > web_catch.log 2>&1 &
+
   Author      : chenyushencc@gmail.com
   date        : 2024/3/13 10:31
 -------------------------------------------------
