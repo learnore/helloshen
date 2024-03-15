@@ -17,7 +17,8 @@
 """
 import asyncio
 
-from tools.web_catch.web_catch import get_website_content, check_update
+from send_email import set_email
+from web_catch import get_website_content, check_update
 
 
 """ 链接和 class 配置 """
@@ -141,5 +142,9 @@ async def main():
 
 
 if __name__ == "__main__":
+    # 发送启动邮箱
+    set_email()
+    print("Web Catch start~\nGood news is coming~")
+
     # 运行主协程
     asyncio.run(main())

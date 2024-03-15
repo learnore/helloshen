@@ -12,12 +12,11 @@
 -------------------------------------------------
 """
 import requests
-from bs4 import BeautifulSoup
-import time
 import datetime
 import asyncio
 
-from tools.web_catch.send_email import set_email
+from bs4 import BeautifulSoup
+from send_email import set_email
 
 
 def get_website_content(url, catch_class):
@@ -52,6 +51,7 @@ async def check_update(name, url, catch_class, last_content):
 
             last_content = new_content
         else:
+            # print(f"point {name} \n {new_content}")
             print(f"{now} 网站暂无更新 {name}")
 
         await asyncio.sleep(60)  # 间隔60秒再次检查

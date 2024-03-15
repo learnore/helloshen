@@ -18,6 +18,7 @@ from email.mime.application import MIMEApplication
 
 
 def set_email():
+    """ 设置完直接发送邮件 """
     # 请替换成你的邮箱地址和密码
     sender_email = 'your_email@163.com'
     authentication = ''     # TODO 授权码
