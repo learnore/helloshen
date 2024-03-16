@@ -57,6 +57,15 @@ async def check_update(name, url, catch_class, last_content):
         await asyncio.sleep(60)  # 间隔60秒再次检查
 
 
+async def test_email():
+    """ 每隔一段时间，发送 test 邮件，观测程序在运行 """
+    while True:
+        set_email()
+        print("Web Catch start~\nGood news is coming~")
+
+        await asyncio.sleep(7200)  # 间隔2小时秒再次检查
+
+
 if __name__ == "__main__":
     name = "监测网站名称"
     url = "https://news.cctv.com/"  # 替换成你要检查的网站地址

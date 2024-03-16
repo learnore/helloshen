@@ -15,11 +15,13 @@
 
                 其他
                 1、rm -rf helloshen      # 删除整个文件夹且不用逐一询问
-                   cd helloshen/tools/web_catch
+                   cd ali_shen/my_workspace/helloshen/tools/web_catch
                 2、git clone https://github.com/learnore/helloshen.git       # 克隆 github 项目（也可以不克隆整个项目，个人随意）
-                3、nohup python web_catch_main.py > web_catch_main.log 2>&1 &
-                4、ps aux | grep "web_catch_main.py"
+                   git pull
+                3、ps aux | grep "web_catch_main.py"
+                4、nohup python web_catch_main.py > web_catch_main.log &
                 5、kill -9 xxxxx
+
 
   Author      : chenyushencc@gmail.com
   date        : 2024/3/13 10:31
@@ -27,9 +29,7 @@
 """
 import asyncio
 
-from send_email import set_email
-from web_catch import get_website_content, check_update
-
+from web_catch import get_website_content, check_update, test_email
 
 """ 链接和 class 配置 """
 link_class = [
@@ -149,6 +149,10 @@ link_class = [
 
 async def main():
     tasks = []
+    # 创建一个定时发送官方邮件的 test 邮件
+    task = asyncio.create_task(test_email())
+    tasks.append(task)
+
     # 创建任务并启动多个协程
     for key, value in enumerate(link_class):
         # print(key, value, value["name"], value["url"], value["class"])
@@ -166,9 +170,5 @@ async def main():
 
 
 if __name__ == "__main__":
-    # 发送启动邮箱
-    set_email()
-    print("Web Catch start~\nGood news is coming~")
-
     # 运行主协程
     asyncio.run(main())
