@@ -55,6 +55,20 @@ link_class = [
         "class": "left"
     },
 
+    # 空军军医大学 211
+    {
+        "name": "空军军医大学-官网-院系通知",
+        "url": "https://www.fmmu.edu.cn/tongzhi/yxtz/yjsy1.htm",
+        "class": "jgtz"
+    },
+    {
+        "name": "研招网-空军军医大学",
+        "url": "https://yz.chsi.com.cn/sch/schoolInfo--schId-368546.dhtml",
+        "class": "left"
+    },
+
+
+
     # 西南大学 211 重庆
     {
         "name": "西南大学-官网-最新动态",
