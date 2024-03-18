@@ -17,7 +17,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
 
-def set_email():
+def set_email(file_path='dedails.txt'):
     """ 设置完直接发送邮件 """
     # 请替换成你的邮箱地址和密码
     sender_email = 'your_email@163.com'
@@ -25,12 +25,12 @@ def set_email():
     receiver_email = 'your_email@163.com'
     subject = 'Web Catch Email'
     body = 'Web Catch start~\nGood news is coming~'
-    attachment_path = 'dedails.txt'  # 附件路径，也决定附件的名称，如果不需要附件可以设置为 None
+    file_path = file_path  # 附件路径，也决定附件的名称，如果不需要附件可以设置为 None
 
-    send_email(sender_email, authentication, receiver_email, subject, body, attachment_path)
+    send_email(sender_email, authentication, receiver_email, subject, body, file_path)
 
 
-def send_email(sender_email, authentication, receiver_email, subject, body, attachment_path=None):
+def send_email(sender_email, authentication, receiver_email, subject, body, file_path=None):
     """ authentication 163邮箱是使用的授权码 """
     # 创建邮件消息
     msg = MIMEMultipart()
@@ -42,10 +42,10 @@ def send_email(sender_email, authentication, receiver_email, subject, body, atta
     msg.attach(MIMEText(body, 'plain'))
 
     # 添加附件
-    if attachment_path:
-        with open(attachment_path, "rb") as attachment:
-            part = MIMEApplication(attachment.read(), Name=attachment_path)
-            part['Content-Disposition'] = 'attachment; filename="%s"' % attachment_path
+    if file_path:
+        with open(file_path, "rb") as attachment:
+            part = MIMEApplication(attachment.read(), Name=file_path)
+            part['Content-Disposition'] = 'attachment; filename="%s"' % file_path
             msg.attach(part)
 
     # 连接到SMTP服务器并发送邮件

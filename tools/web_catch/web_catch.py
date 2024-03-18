@@ -60,7 +60,7 @@ async def check_update(name, url, catch_class, last_content):
 async def test_email():
     """ 每隔一段时间，发送 test 邮件，观测程序在运行 """
     while True:
-        set_email()
+        set_email(file_path=None)
         print("Web Catch start~\nGood news is coming~")
 
         await asyncio.sleep(8*60*60)  # 间隔8小时秒再次检查
