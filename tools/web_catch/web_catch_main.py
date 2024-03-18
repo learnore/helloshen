@@ -19,7 +19,7 @@
                 2、git clone https://github.com/learnore/helloshen.git       # 克隆 github 项目（也可以不克隆整个项目，个人随意）
                    git pull
                 3、ps aux | grep "web_catch_main.py"
-                4、nohup python web_catch_main.py > web_catch_main.log &
+                4、nohup python web_catch_main.py > web_catch_main.log 2>&1 &
                 5、kill -9 xxxxx
 
 
@@ -137,6 +137,35 @@ link_class = [
         "url": "https://yz.chsi.com.cn/sch/schoolInfo--schId-368547.dhtml",
         "class": "yxk-column-con"           # 调剂 class
     },
+
+
+    # 研究所，信息主要来源 = 研招网 + 微信公众号 + 官网
+    # 武汉邮电科学研究院
+    {
+        "name": "研招网-武汉邮电科学研究院 + 关注公众号",
+        "url": "https://yz.chsi.com.cn/sch/schoolInfo--schId-368331.dhtml",
+        "class": "left"  # 调剂 class
+    },
+
+    # 中国兵器科学研究院(西南自动化研究所)
+    {
+        "name": "研招网-中国兵器科学研究院(西南自动化研究所) + 关注公众号",
+        "url": "https://yz.chsi.com.cn/sch/schoolInfo--schId-368469.dhtml",
+        "class": "left"  # 调剂 class
+    },
+
+    # 研究院-中国地震局地震研究所
+    {
+        "name": "研招网-中国地震局地震研究所",
+        "url": "https://yz.chsi.com.cn/sch/schoolInfo--schId-368329.dhtml",
+        "class": "left"  # 调剂 class
+    },
+    {
+        "name": "中国地震局地震研究所-官网",
+        "url": "https://www.ief.ac.cn/zstext/index.html",
+        "class": "secondarybox"  # 调剂 class
+    },
+
 
     # test
     {
