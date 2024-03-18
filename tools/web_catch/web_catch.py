@@ -63,7 +63,7 @@ async def test_email():
         set_email()
         print("Web Catch start~\nGood news is coming~")
 
-        await asyncio.sleep(7200)  # 间隔2小时秒再次检查
+        await asyncio.sleep(8*60*60)  # 间隔8小时秒再次检查
 
 
 if __name__ == "__main__":
