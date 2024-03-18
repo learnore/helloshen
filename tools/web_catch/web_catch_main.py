@@ -11,16 +11,18 @@
 
   Summary     : 准备环境
                 1、pip install beautifulsoup4
-                2、修改邮件授权码
+                2、git clone https://github.com/learnore/helloshen.git       # 克隆 github 项目（也可以不克隆整个项目，个人随意）
+                3、修改邮件授权码
 
-                其他
+                常用命令
                 1、rm -rf helloshen      # 删除整个文件夹且不用逐一询问
                    cd ali_shen/my_workspace/helloshen/tools/web_catch
-                2、git clone https://github.com/learnore/helloshen.git       # 克隆 github 项目（也可以不克隆整个项目，个人随意）
-                   git pull
-                3、ps aux | grep "web_catch_main.py"
-                4、nohup python web_catch_main.py > web_catch_main.log 2>&1 &
-                5、kill -9 xxxxx
+                2、git stash             # 将未提交的更改保存在一个临时的存储区中
+                   git pull             # 拉取新代码
+                   git stash pop        # 恢复暂存的更改
+                3、nohup python web_catch_main.py > web_catch_main.log 2>&1 &
+                4、ps aux | grep "web_catch_main.py"
+                  kill -9 xxxxx
 
 
   Author      : chenyushencc@gmail.com
