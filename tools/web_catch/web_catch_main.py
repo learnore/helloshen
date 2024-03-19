@@ -30,7 +30,9 @@
 -------------------------------------------------
 """
 import asyncio
+import logging
 
+from my_logging import LoggerWriter
 from web_catch import get_website_content, check_update, test_email
 
 """ 链接和 class 配置 """
@@ -201,5 +203,12 @@ async def main():
 
 
 if __name__ == "__main__":
+    # 将 sys.stdout 和 sys.stderr 重定向到日志记录器
+    """ 将 print 打印成日志，需要本地打印时，注释掉 """
+    import sys
+    sys.stdout = LoggerWriter(logging.INFO)
+    sys.stderr = LoggerWriter(logging.ERROR)
+    """ 将 print 打印成日志，需要本地打印时，注释掉 """
+
     # 运行主协程
     asyncio.run(main())
