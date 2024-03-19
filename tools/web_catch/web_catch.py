@@ -46,8 +46,8 @@ async def check_update(name, url, catch_class, last_content):
             print(f"{now} {name} 网站有更新！\n {new_content}")
             # 存入文本 并发送邮件提醒
             with open("dedails.txt", "w", encoding='utf-8') as file:
-                file.write(new_content)
-            set_email()
+                file.write(url + new_content)
+            set_email(subject=name)
 
             last_content = new_content
         else:
@@ -60,7 +60,7 @@ async def check_update(name, url, catch_class, last_content):
 async def test_email():
     """ 每隔一段时间，发送 test 邮件，观测程序在运行 """
     while True:
-        set_email(file_path=None)
+        set_email(file_path=None)       # 定时测试邮件不用发送附件
         print("Web Catch start~\nGood news is coming~")
 
         await asyncio.sleep(8*60*60)  # 间隔8小时秒再次检查

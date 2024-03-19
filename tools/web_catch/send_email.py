@@ -17,15 +17,16 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
 
-def set_email(file_path='dedails.txt'):
-    """ 设置完直接发送邮件 """
+def set_email(subject="Web Catch Email", file_path='dedails.txt'):
+    """
+    设置完直接发送邮件
+    @file_path      附件路径，也决定附件的名称，如果不需要附件可以设置为 None
+    """
     # 请替换成你的邮箱地址和密码
     sender_email = 'your_email@163.com'
     authentication = ''     # TODO 授权码
     receiver_email = 'your_email@163.com'
-    subject = 'Web Catch Email'
     body = 'Web Catch start~\nGood news is coming~'
-    file_path = file_path  # 附件路径，也决定附件的名称，如果不需要附件可以设置为 None
 
     send_email(sender_email, authentication, receiver_email, subject, body, file_path)
 
