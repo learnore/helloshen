@@ -25,7 +25,7 @@ task_interface = "/book-video-admin/bookVideo/videoTask/list"       # 获取任�
 headers = {'Content-Type': 'application/json'}      # 设置请求头，指定 Content-Type 为 application/json
 
 # 任务状态
-task_status = {
+task_status_dict = {
     3: "已上传",
     5: "审核待指派",
     6: "待审核",
