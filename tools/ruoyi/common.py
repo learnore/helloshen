@@ -68,10 +68,14 @@ def get_request(interface_name, params=None):
     """ get 请求公共方法 """
     print(f"headers: {headers}, params: {params}")
 
-    response = requests.get(http_url + interface_name, headers=headers, params=params)  # 发送GET请求
+    try:
+        response = requests.get(http_url + interface_name, headers=headers, params=params)  # 发送GET请求
 
-    print(f"{interface_name}: {response.status_code}")      # 打印状态码
-    return json.loads(response.text)
+        print(f"{interface_name}: {response.status_code}")  # 打印状态码
+        return json.loads(response.text)
+
+    except requests.exceptions.ProxyError:
+        print("Please close your proxy, and try again later~")
 
 
 def post_request(interface_name, **data):

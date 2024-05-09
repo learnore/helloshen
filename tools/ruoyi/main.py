@@ -13,26 +13,27 @@
 """
 import copy
 
-from tools.ruoyi.common import post_request, login_interface, post_headers, task_interface, get_request, get_headers, task_status_dict
+from tools.ruoyi.common import post_request, login_interface, post_headers, task_interface, get_request, get_headers, \
+    task_status_dict
 
 if __name__ == "__main__":
     """ 登录获取 token """
     post_data = {
-        "username": "",
-        "password": "",
-        "code": "6",            # TODO
-        "uuid": "5d97ce691dfd4289a9ad8b4ca4c28139"            # data_dict["uuid"]
+        "username":
+        "password":
+        "code": "6",  # TODO
+        "uuid": "5d97ce691dfd4289a9ad8b4ca4c28139"  # data_dict["uuid"]
     }
 
     login_data = post_request(login_interface, **post_data)
 
     token = login_data["token"]
-    post_headers(token)     # headers 加入 token
+    post_headers(token)  # headers 加入 token
     print(get_headers())
 
     """ 获取任务信息 """
-    page_num, page_size, statistics_total = 1, 20, 0    # statistics_total 本次统计数量
-    my_statistics = copy.deepcopy(task_status_dict)     # 深拷贝复制
+    page_num, page_size, statistics_total = 1, 20, 0  # statistics_total 本次统计数量
+    my_statistics = copy.deepcopy(task_status_dict)  # 深拷贝复制
 
     while True:
         params = {
@@ -52,24 +53,25 @@ if __name__ == "__main__":
         for row in task_data["rows"]:
             statistics_total += 1
 
-            task_id, task_status = row["questionId"], row["taskStatus"] # 任务ID、任务状态
+            task_id, task_status = row["questionId"], row["taskStatus"]  # 任务ID、任务状态
             task_statistics = my_statistics.get(task_status, "task_status_name:0")
 
             if len(task_statistics.split(":")) == 2:
-                task_status_name, task_status_num = task_statistics.split(":")[0], int(task_statistics.split(":")[1])+1
+                task_status_name, task_status_num = task_statistics.split(":")[0], int(
+                    task_statistics.split(":")[1]) + 1
                 my_statistics[task_status] = f"{task_status_name}:{task_status_num}"
 
             else:
-                my_statistics[task_status] = f"{my_statistics[task_status]}:1"      # 第一次查到的时候，给个初始值 1
+                my_statistics[task_status] = f"{my_statistics[task_status]}:1"  # 第一次查到的时候，给个初始值 1
 
         # 页数自增
         page_num += 1
 
     # 移除没有统计的任务状态数据
-    temp_tatistics = copy.deepcopy(my_statistics)       # 深拷贝
+    temp_tatistics = copy.deepcopy(my_statistics)  # 深拷贝
     for key, value in temp_tatistics.items():
         if len(value.split(":")) == 1:
-            removed_value = my_statistics.pop(key)       # 移除 'key' 及其对应的值，并返回被移除的值
+            removed_value = my_statistics.pop(key)  # 移除 'key' 及其对应的值，并返回被移除的值
 
     print(f" - 本次统计数据如下\n 总计\t{statistics_total} \n - 详细信息如下:")
     for val in my_statistics.values():
