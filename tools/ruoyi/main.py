@@ -19,10 +19,10 @@ from tools.ruoyi.common import post_request, login_interface, post_headers, task
 if __name__ == "__main__":
     """ 登录获取 token """
     post_data = {
-        "username":
-        "password":
-        "code": "6",  # TODO
-        "uuid": "5d97ce691dfd4289a9ad8b4ca4c28139"  # data_dict["uuid"]
+        "username": "zy-z82",  # zy-z82,syr-z16648
+        "password": "5f14k#",
+        "code": "0",  # TODO
+        "uuid": "5c1f2cee86794ec2a840b58955b21585"  # data_dict["uuid"]     # TODO
     }
 
     login_data = post_request(login_interface, **post_data)
@@ -73,7 +73,7 @@ if __name__ == "__main__":
         if len(value.split(":")) == 1:
             removed_value = my_statistics.pop(key)  # 移除 'key' 及其对应的值，并返回被移除的值
 
-    print(f" - 本次统计数据如下\n 总计\t{statistics_total} \n - 详细信息如下:")
+    print(f"\n总计\t{statistics_total} \n--------------------")
     for val in my_statistics.values():
         print(val)
 
