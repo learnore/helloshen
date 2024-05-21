@@ -104,5 +104,17 @@ def get_headers():
     return headers
 
 
+def get_array():
+    results = []
+    with open('task_ids.txt', 'r') as f:
+        for line in f:
+            if line != "\n":
+                results.append(line.split("\n")[0])
+
+    return results
+
+
 if __name__ == "__main__":
-    print("chenyushen")
+    results = get_array()
+    print(results)
+    print("chenyushen test")

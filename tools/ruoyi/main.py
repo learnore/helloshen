@@ -14,23 +14,10 @@
 import copy
 
 from tools.ruoyi.common import post_request, login_interface, post_headers, task_interface, get_request, get_headers, \
-    task_status_dict
+    task_status_dict, get_array
 
-if __name__ == "__main__":
-    """ 登录获取 token """
-    post_data = {
-        "username": "zy-z82",  # zy-z82,syr-z16648
-        "password": "5f14k#",
-        "code": "0",  # TODO
-        "uuid": "5c1f2cee86794ec2a840b58955b21585"  # data_dict["uuid"]     # TODO
-    }
 
-    login_data = post_request(login_interface, **post_data)
-
-    token = login_data["token"]
-    post_headers(token)  # headers 加入 token
-    print(get_headers())
-
+def get_question_status1():
     """ 获取任务信息 """
     page_num, page_size, statistics_total = 1, 20, 0  # statistics_total 本次统计数量
     my_statistics = copy.deepcopy(task_status_dict)  # 深拷贝复制
@@ -40,10 +27,10 @@ if __name__ == "__main__":
             "pageNum": page_num,
             "pageSize": page_size,
             "taskStatusList": [3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29,
-                               30, 31, 32, 33, 34, 35, 95, 98]
+                               30, 31, 32, 33, 34, 35, 95]
         }  # 98: "错题确认中" 排除统计范围
         task_data = get_request(task_interface, params=params)
-        print(task_data)
+        # print(task_data)
 
         # 如果已经找满了数据就开溜（但是中途可能会加入数据，所以尽可能在查询的时候先不要动后台）
         if statistics_total == task_data["total"]:
@@ -75,19 +62,73 @@ if __name__ == "__main__":
 
     print(f"\n总计\t{statistics_total} \n--------------------")
     for val in my_statistics.values():
-        print(val)
+        i, j = val.split(":")
+        print(f"{i}\t{j}")
 
-    """ ------- 例子 -----
-     - 本次统计数据如下
-     总计	44 
-     - 详细信息如下:
-    审核待指派:10
-    待审核:2
-    审核问题待确认:4
-    品检待分配:9
-    待稽核:1
-    效果审核通过:9
-    错题确认中:9
-    """
+
+def get_question_status2(task_ids=None):
+    """ 根据“题目ID”的集合，获取指定题目的状态，便于及时查询 """
+    page_num, page_size, statistics_total = 1, 20, 0        # statistics_total 本次统计数量
+
+    temp_results = []
+    while True:
+        params = {
+            "pageNum": page_num,
+            "pageSize": page_size,
+            "taskStatusList": [3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29,
+                               30, 31, 32, 33, 34, 35, 95]
+        }  # 98: "错题确认中" 排除统计范围
+        task_data = get_request(task_interface, params=params)
+        # print(task_data)
+
+        # 如果已经找满了数据就开溜（但是中途可能会加入数据，所以尽可能在查询的时候先不要动后台）
+        if statistics_total == task_data["total"]:
+            break
+
+        # 开始逐一分析数据
+        for row in task_data["rows"]:
+            statistics_total += 1
+
+            task_id, task_status = row["questionId"], row["taskStatus"]  # 任务ID、任务状态
+            if str(task_id) in task_ids:
+                temp_results.append((str(task_id), task_status_dict[task_status]))
+
+        # 页数自增
+        page_num += 1
+
+    """ 按照给的 task_ids 数组的顺序进行排序后再输出 """
+    results = []
+    for task_id in task_ids:
+        for res in temp_results:
+            if task_id == res[0]:
+                results.append(res)
+
+    return results      # [("task_id", "task_status", "task_status_name"), ("task_id", "task_status", "task_status_name")]
+
+
+if __name__ == "__main__":
+    """ 登录获取 token """
+    post_data = {
+        "username":
+        "password": "",
+        "code": "5",  # TODO
+        "uuid": "61b1eded5009462ebc93c7b580824465"  # data_dict["uuid"]     # TODO
+    }
+
+    login_data = post_request(login_interface, **post_data)
+
+    token = login_data["token"]
+    post_headers(token)  # headers 加入 token
+    # print(get_headers())
+
+    """ 统计全部”已完成“题目状态数量 """
+    get_question_status1()
+
+    """ 统计具体“题号ID集合”的题目状态，题目集合放在 task_ids.txt """
+    task_ids = get_array()
+    tasks = get_question_status2(task_ids=task_ids)
+    for task in tasks:
+        task_id, task_status = task
+        print(f"{task_id}\t{task_status}")
 
 
