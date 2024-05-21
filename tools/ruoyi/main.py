@@ -27,8 +27,8 @@ def get_question_status1():
             "pageNum": page_num,
             "pageSize": page_size,
             "taskStatusList": [3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29,
-                               30, 31, 32, 33, 34, 35, 95]
-        }  # 98: "错题确认中" 排除统计范围
+                               30, 31, 32, 33, 34, 35, 95, 98]
+        }  # 98: "错题确认中"
         task_data = get_request(task_interface, params=params)
         # print(task_data)
 
@@ -60,10 +60,13 @@ def get_question_status1():
         if len(value.split(":")) == 1:
             removed_value = my_statistics.pop(key)  # 移除 'key' 及其对应的值，并返回被移除的值
 
-    print(f"\n总计\t{statistics_total} \n--------------------")
+    error_tasks = 0
     for val in my_statistics.values():
         i, j = val.split(":")
         print(f"{i}\t{j}")
+        error_tasks = int(j)        # 最后一个98 是”错题确认中“
+
+    print(f"--------------------\n总计\t{statistics_total}-{error_tasks}={eval(str(statistics_total-error_tasks))} \n")
 
 
 def get_question_status2(task_ids=None):
@@ -110,9 +113,9 @@ if __name__ == "__main__":
     """ 登录获取 token """
     post_data = {
         "username":
-        "password": "",
-        "code": "5",  # TODO
-        "uuid": "61b1eded5009462ebc93c7b580824465"  # data_dict["uuid"]     # TODO
+        "password": "5 ",
+        "code": "1",  # TODO
+        "uuid": "5494793948f240fcbad784a9b7c41984"  # data_dict["uuid"]     # TODO
     }
 
     login_data = post_request(login_interface, **post_data)
