@@ -102,9 +102,16 @@ def get_question_status2(task_ids=None):
     """ 按照给的 task_ids 数组的顺序进行排序后再输出 """
     results = []
     for task_id in task_ids:
+        is_find = False
         for res in temp_results:
             if task_id == res[0]:
                 results.append(res)
+                is_find = True
+                break
+
+        # 如果没有查询到，那就空着
+        if not is_find:
+            results.append((str(task_id), ""))
 
     return results      # [("task_id", "task_status", "task_status_name"), ("task_id", "task_status", "task_status_name")]
 
@@ -112,10 +119,10 @@ def get_question_status2(task_ids=None):
 if __name__ == "__main__":
     """ 登录获取 token """
     post_data = {
-        "username":
-        "password": "5 ",
-        "code": "1",  # TODO
-        "uuid": "5494793948f240fcbad784a9b7c41984"  # data_dict["uuid"]     # TODO
+        # "username": "zy-z1
+        "password": "5",
+        "code": "0",  # TODO
+        "uuid": "a26c89e5997e4ee68e173b09f28a8ac0"  # data_dict["uuid"]     # TODO
     }
 
     login_data = post_request(login_interface, **post_data)
